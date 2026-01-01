@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="calculator">
+        <input type="text" placeholder="0" value="0" />
+        <div class="buttons">
+          <!--Numbers-->
+          <button>7</button>
+          <button>8</button>
+          <!--Action buttons-->
+          <button>DEL</button>
+          <button class="Clear">AC</button>
+
+          <button>9</button>
+          <button>4</button>
+          <button>5</button>
+          <!--Operators-->
+          <button class="operator">×</button>
+
+          <button>6</button>
+
+          <button>1</button>
+          <button>2</button>
+          <button class="operator">-</button>
+          <button>3</button>
+          <!--Operators-->
+
+          <!--Zero Decimal & Equal-To Sign-->
+          <button>0</button>
+          <button class="operator">+</button>
+          <button class="operator">÷</button>
+          <button class="Equal-To">=</button>
+          <button>.</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p class="meta">Calculator v1.0 • Gerald • Matrix Tech Team</p>
+      <p class="hint">
+        Tip: Press Enter to evaluate, DEL to remove a character, AC to clear.
+      </p>
+    </div>
+
+    <script src="calc-core.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

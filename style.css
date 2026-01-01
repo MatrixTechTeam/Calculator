@@ -1,0 +1,150 @@
+/* Black, minimal, responsive calculator styles */
+:root {
+  --bg: #0b0b0b;
+  --card: #000;
+  --panel: #0f0f0f;
+  --accent: #ff9500;
+  --equal: #007aff;
+  --clear: #ff3b30;
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.6);
+}
+html {
+  height: 100%;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+}
+/* center and make wrapper fit-content so page 'squeezes' to calculator size */
+.wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.calculator {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 18px;
+  width: 320px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+}
+.calculator input {
+  width: 100%;
+  height: 62px;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 1.6rem;
+  text-align: right;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+.calculator .buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+.calculator button {
+  height: 56px;
+  border-radius: 10px;
+  border: none;
+  background: var(--panel);
+  color: var(--text);
+  font-size: 1.05rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+  transition: transform 0.08s ease, filter 0.12s ease;
+}
+.calculator button:hover {
+  filter: brightness(1.05);
+  cursor: pointer;
+}
+.calculator button:active {
+  transform: translateY(1px) scale(0.995);
+}
+.calculator button.operator {
+  background: linear-gradient(180deg, var(--accent), #c76f00);
+  color: #fff;
+  font-weight: 700;
+}
+.calculator .Equal-To {
+  background: linear-gradient(180deg, var(--equal), #0051cc);
+  font-weight: 700;
+}
+.calculator .Clear {
+  background: linear-gradient(180deg, var(--clear), #cc2a24);
+  font-weight: 700;
+}
+
+/* smaller screens */
+@media (max-width: 420px) {
+  .calculator {
+    width: min(95vw, 360px);
+    padding: 12px;
+  }
+  .calculator button {
+    height: 48px;
+    font-size: 1rem;
+  }
+  .calculator input {
+    height: 52px;
+    font-size: 1.3rem;
+  }
+}
+
+/* accessibility focus */
+.calculator button:focus {
+  outline: 3px solid rgba(255, 255, 255, 0.06);
+  outline-offset: 2px;
+}
+
+/* Footer styles aligned with the calculator card */
+.footer {
+  width: 320px;
+  margin: 10px auto 0 auto;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  color: var(--muted);
+}
+.footer .meta {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+.footer .hint {
+  margin: 6px 0 0 0;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+.footer a {
+  color: var(--equal);
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 420px) {
+  .footer {
+    width: min(95vw, 360px);
+    padding: 8px;
+  }
+}
